@@ -3,24 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoapClean | Eco Innovation</title>
+<title>SoapClean | Future of Hygiene</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4fff7;color:#222}
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0f14;
+color:white;
+overflow-x:hidden;
+}
 
 /* NAV */
 nav{
 position:fixed;width:100%;
 display:flex;justify-content:space-between;
-padding:15px 30px;
-background:rgba(255,255,255,0.9);
-backdrop-filter:blur(10px);
+padding:20px 40px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
-nav a{text-decoration:none;color:#27ae60;margin-left:15px;font-weight:600}
+nav a{color:#aaa;margin-left:20px;text-decoration:none}
+nav a:hover{color:#2ecc71}
 
 /* HERO */
 .hero{
@@ -28,71 +34,118 @@ height:100vh;
 display:flex;flex-direction:column;
 justify-content:center;align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#27ae60,#2ecc71);
-color:white;
+background:linear-gradient(180deg,#2ecc71 0%,#0b0f14 80%);
 }
-.hero h1{font-size:3.5em}
-.hero p{margin-top:10px}
+.hero h1{
+font-size:4.5em;
+background:linear-gradient(90deg,#2ecc71,#00ffcc);
+-webkit-background-clip:text;
+color:transparent;
+}
+.hero p{color:#ccc;margin-top:15px}
+
+/* BTN */
 .btn{
-margin-top:20px;padding:12px 25px;
-border-radius:25px;
-background:white;color:#27ae60;
+margin-top:25px;
+padding:14px 30px;
+border-radius:40px;
+background:linear-gradient(90deg,#2ecc71,#00ffcc);
+color:black;
 text-decoration:none;
 transition:.3s;
 }
-.btn:hover{background:#1e8449;color:white}
+.btn:hover{transform:scale(1.1)}
 
 /* SECTION */
-section{padding:100px 20px;max-width:1100px;margin:auto;text-align:center}
-h2{color:#27ae60;margin-bottom:20px}
+section{
+padding:120px 20px;
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
 
 /* GRID */
-.grid{display:flex;flex-wrap:wrap;justify-content:center}
-.card{
-width:260px;background:white;margin:15px;padding:25px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
-transition:.3s;
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
-.card:hover{transform:translateY(-10px)}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:20px;
+margin:15px;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(46,204,113,0.3);
+}
 
 /* STATS */
-.stats{display:flex;flex-wrap:wrap;justify-content:center}
+.stats{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
 .stat{margin:20px}
-.stat h3{color:#27ae60;font-size:2em}
+.stat h3{color:#2ecc71;font-size:2.5em}
 
-/* TIMELINE */
-.timeline{max-width:600px;margin:auto;text-align:left}
-.timeline div{border-left:3px solid #27ae60;padding-left:15px;margin-bottom:20px}
-
-/* FAQ */
-.faq-item{
-background:#eafaf1;
-margin:10px;
-padding:15px;
-border-radius:10px;
-cursor:pointer;
+/* IMAGE */
+.image{
+width:100%;
+border-radius:20px;
+margin-top:30px;
 }
 
-/* FORM */
+/* GRAPH */
+.bar{
+height:12px;
+background:#2ecc71;
+margin:10px 0;
+width:0;
+transition:2s;
+}
+
+/* FAQ */
+.faq{
+text-align:left;
+}
+.faq-item{
+background:rgba(255,255,255,0.05);
+padding:20px;
+margin:10px;
+border-radius:10px;
+}
+
+/* CONTACT */
 input,textarea{
-width:100%;padding:10px;margin:10px 0;
-border-radius:10px;border:1px solid #ccc;
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
 }
 
 /* FOOTER */
 footer{
-background:#27ae60;color:white;
-padding:30px;text-align:center;
+text-align:center;
+padding:40px;
+color:#aaa;
 }
 
-/* ANIMATION */
+/* ANIM */
 .reveal{
-opacity:0;transform:translateY(40px);
+opacity:0;
+transform:translateY(60px);
 transition:1s;
 }
 .reveal.active{
-opacity:1;transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
@@ -100,88 +153,123 @@ opacity:1;transform:translateY(0);
 <body>
 
 <nav>
-<div><strong>SoapClean 🌱</strong></div>
+<div><strong>SoapClean</strong></div>
 <div>
 <a href="#producto">Producto</a>
 <a href="#impacto">Impacto</a>
 <a href="#mercado">Mercado</a>
 <a href="#negocio">Negocio</a>
 <a href="#faq">FAQ</a>
-<a href="#contacto">Contacto</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<h1>El futuro de la higiene 🌍</h1>
-<p>Láminas de jabón ecológicas, portátiles y revolucionarias</p>
+<h1>Future of Hygiene</h1>
+<p>Innovación sostenible basada en ciencia real</p>
 <a href="#producto" class="btn">Explorar</a>
 </section>
 
 <!-- PRODUCTO -->
 <section id="producto" class="reveal">
-<h2>Producto Innovador</h2>
+<h2>Innovación en Láminas de Jabón</h2>
+
 <p>
-SoapClean introduce láminas de jabón biodegradables que se disuelven en segundos,
-activando agentes limpiadores que eliminan suciedad y bacterias eficazmente.
+Las láminas de jabón SoapClean están diseñadas con surfactantes biodegradables
+que eliminan grasa, bacterias y suciedad al contacto con agua. :contentReference[oaicite:0]{index=0}
 </p>
 
+<p>
+Estos surfactantes funcionan reduciendo la tensión superficial del agua,
+permitiendo desprender aceites y microorganismos eficazmente. :contentReference[oaicite:1]{index=1}
+</p>
+
+<img class="image" src="https://images.unsplash.com/photo-1583947215259-38e31be8751f">
+
 <div class="grid">
-<div class="card"><h3>🌱 Eco</h3><p>Biodegradable</p></div>
-<div class="card"><h3>👜 Portátil</h3><p>Ideal para viajes</p></div>
-<div class="card"><h3>⚡ Rápido</h3><p>Disolución instantánea</p></div>
+<div class="card">🌱 Biodegradable</div>
+<div class="card">⚡ Disolución inmediata</div>
+<div class="card">👜 Portátil</div>
 </div>
+
 </section>
 
 <!-- IMPACTO -->
 <section id="impacto" class="reveal">
 <h2>Impacto Ambiental</h2>
+
+<p>
+Los jabones biodegradables se descomponen naturalmente sin afectar ecosistemas,
+reduciendo contaminación del agua y suelo. :contentReference[oaicite:2]{index=2}
+</p>
+
+<p>
+Además, las láminas eliminan envases plásticos y reducen emisiones logísticas
+al ser ligeras y compactas. :contentReference[oaicite:3]{index=3}
+</p>
+
 <div class="stats">
-<div class="stat"><h3>100%</h3><p>Libre de plástico</p></div>
-<div class="stat"><h3>-80%</h3><p>Menos transporte</p></div>
+<div class="stat"><h3>100%</h3><p>Menos plástico</p></div>
+<div class="stat"><h3>-80%</h3><p>Transporte</p></div>
 <div class="stat"><h3>0%</h3><p>Residuos</p></div>
 </div>
+
 </section>
 
 <!-- MERCADO -->
 <section id="mercado" class="reveal">
 <h2>Oportunidad de Mercado</h2>
+
 <p>
-El mercado de productos ecológicos está creciendo rápidamente debido a la
-demanda de soluciones sostenibles y prácticas.
+El crecimiento de productos sostenibles está impulsado por consumidores
+conscientes que buscan alternativas ecológicas y saludables.
 </p>
+
+<div class="card">
+<h3>Crecimiento del mercado</h3>
+<div class="bar" id="bar1"></div>
+<div class="bar" id="bar2"></div>
+<div class="bar" id="bar3"></div>
+</div>
+
 </section>
 
 <!-- NEGOCIO -->
 <section id="negocio" class="reveal">
 <h2>Modelo de Negocio</h2>
-<p><strong>Segmento:</strong> Jóvenes, viajeros, eco-friendly</p>
-<p><strong>Canales:</strong> E-commerce, retail</p>
-<p><strong>Ingresos:</strong> Venta directa y suscripción</p>
 
-<h3>Roadmap</h3>
-<div class="timeline">
-<div><strong>2026:</strong> Lanzamiento</div>
-<div><strong>2027:</strong> Expansión nacional</div>
-<div><strong>2028:</strong> Internacional</div>
+<p><strong>Segmento:</strong> jóvenes, viajeros, eco-consumidores</p>
+<p><strong>Canales:</strong> e-commerce, retail, redes sociales</p>
+<p><strong>Ingresos:</strong> venta directa + suscripción</p>
+
+<div class="card">
+<p>
+Las láminas reducen costos de transporte y almacenamiento,
+mejorando la rentabilidad frente a productos líquidos.
+</p>
 </div>
+
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="reveal">
 <h2>Preguntas Frecuentes</h2>
-<div class="faq-item">¿Es biodegradable? ✔ Sí</div>
-<div class="faq-item">¿Es seguro? ✔ Totalmente</div>
-<div class="faq-item">¿Cómo se usa? ✔ Agua + lámina</div>
+
+<div class="faq">
+<div class="faq-item">✔ ¿Es biodegradable? Sí, se descompone naturalmente</div>
+<div class="faq-item">✔ ¿Cómo se usa? Agua + lámina</div>
+<div class="faq-item">✔ ¿Es seguro? Sí, sin químicos agresivos</div>
+</div>
+
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="reveal">
+<section class="reveal">
 <h2>Contacto</h2>
 
 <form>
-<input type="text" placeholder="Nombre">
-<input type="email" placeholder="Email">
+<input placeholder="Nombre">
+<input placeholder="Email">
 <textarea placeholder="Mensaje"></textarea>
 <button class="btn">Enviar</button>
 </form>
@@ -189,18 +277,25 @@ demanda de soluciones sostenibles y prácticas.
 </section>
 
 <footer>
-<p>© 2026 SoapClean | Innovación ecológica global</p>
+<p>© 2026 SoapClean — Startup ecológica global</p>
 </footer>
 
 <script>
-window.addEventListener("scroll",function(){
-let reveals=document.querySelectorAll(".reveal");
-reveals.forEach(el=>{
-let wh=window.innerHeight;
-let et=el.getBoundingClientRect().top;
-if(et<wh-100){el.classList.add("active")}
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add("active");
+}
 });
 });
+
+window.onload=()=>{
+setTimeout(()=>{
+document.getElementById("bar1").style.width="90%";
+document.getElementById("bar2").style.width="75%";
+document.getElementById("bar3").style.width="60%";
+},500);
+}
 </script>
 
 </body>
