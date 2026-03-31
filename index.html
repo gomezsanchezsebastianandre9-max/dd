@@ -3,245 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoapClean | Innovación Ecológica</title>
+<title>SoapClean | Clean Anywhere</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f9fffb;
+    color:#222;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f7fff9;
-    color: #333;
-    scroll-behavior: smooth;
+/* HERO PREMIUM */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1581579185169-9c9c5c0d6e6c') center/cover;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
 }
-
-/* HEADER */
-header {
-    height: 100vh;
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    animation: fadeIn 2s ease;
+.hero::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
 }
-
-header h1 {
-    font-size: 3.5em;
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:fadeUp 1.5s ease;
 }
-
-header p {
-    margin-top: 10px;
-    font-size: 1.3em;
+.hero h1{
+    font-size:4em;
 }
-
-.btn {
-    margin-top: 25px;
-    padding: 15px 30px;
-    background: white;
-    color: #27ae60;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.hero p{
+    font-size:1.3em;
+    margin-top:10px;
+    opacity:0.9;
 }
-
-.btn:hover {
-    background: #1e8449;
-    color: white;
+.btn{
+    margin-top:20px;
+    padding:15px 40px;
+    border-radius:50px;
+    background:#2ecc71;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#27ae60;
+    transform:scale(1.05);
 }
 
 /* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    padding:15px;
+    text-align:center;
 }
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #27ae60;
-    font-weight: bold;
+nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#27ae60;
+    font-weight:600;
 }
 
 /* SECTIONS */
-section {
-    padding: 80px 20px;
-    text-align: center;
+section{
+    padding:100px 20px;
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+h2{
+    font-size:2.5em;
+    margin-bottom:20px;
+    color:#27ae60;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #27ae60;
+/* PRODUCT */
+.product{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+}
+.product img{
+    width:300px;
+    border-radius:20px;
+    margin:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+.product-text{
+    max-width:500px;
 }
 
 /* CARDS */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.card{
+    width:260px;
+    margin:15px;
+    padding:25px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
 }
 
-.card {
-    background: white;
-    width: 260px;
-    margin: 15px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.4s;
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.stat{
+    margin:20px;
+}
+.stat h3{
+    font-size:2em;
+    color:#27ae60;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
 }
-
-/* BUSINESS */
-.business {
-    background: #eafaf1;
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
 }
-
-/* ANIMATIONS */
-.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(50px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
 /* FOOTER */
-footer {
-    background: #27ae60;
-    color: white;
-    padding: 30px;
+footer{
+    background:#27ae60;
+    color:white;
+    padding:40px;
+    text-align:center;
 }
 
 /* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    padding: 15px;
-    border-radius: 50%;
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:18px;
+    border-radius:50%;
+    color:white;
+    font-size:22px;
+    text-decoration:none;
 }
 
 /* RESPONSIVE */
-@media(max-width: 768px){
-    header h1 {
-        font-size: 2.5em;
-    }
+@media(max-width:768px){
+.hero h1{font-size:2.5em;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>SoapClean 🌱</h1>
-    <p>Limpieza ecológica en la palma de tu mano</p>
-    <a href="#producto" class="btn">Descubrir</a>
-</header>
-
 <nav>
-    <a href="#producto">Producto</a>
-    <a href="#beneficios">Beneficios</a>
-    <a href="#negocio">Negocio</a>
-    <a href="#contacto">Contacto</a>
+<a href="#producto">Producto</a>
+<a href="#impacto">Impacto</a>
+<a href="#negocio">Negocio</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
-<section id="producto" class="hidden">
-    <h2>¿Qué es SoapClean?</h2>
-    <p>
-        SoapClean es una innovación en higiene personal: láminas de jabón biodegradables,
-        diseñadas para brindar limpieza práctica, portátil y sostenible en cualquier lugar.
-    </p>
+<div class="hero">
+<div class="hero-content">
+<h1>SoapClean 🌱</h1>
+<p>Clean Anywhere. Care Everywhere.</p>
+<a href="#producto" class="btn">Explore</a>
+</div>
+</div>
+
+<section id="producto" class="reveal">
+<h2>Reinventando la limpieza</h2>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2">
+<div class="product-text">
+<p>
+SoapClean introduce una nueva categoría de higiene: láminas de jabón biodegradables,
+compactas y listas para usar en cualquier momento.
+</p>
+</div>
+</div>
 </section>
 
-<section id="beneficios" class="hidden">
-    <h2>Beneficios</h2>
-    <div class="container">
-        <div class="card">
-            <h3>🌱 Ecológico</h3>
-            <p>Reduce el impacto ambiental con materiales biodegradables.</p>
-        </div>
-
-        <div class="card">
-            <h3>👜 Portátil</h3>
-            <p>Llévalo a cualquier lugar sin complicaciones.</p>
-        </div>
-
-        <div class="card">
-            <h3>⚡ Práctico</h3>
-            <p>Se disuelve rápidamente con agua.</p>
-        </div>
-
-        <div class="card">
-            <h3>✨ Innovador</h3>
-            <p>Una nueva forma de higiene personal moderna.</p>
-        </div>
-    </div>
+<section id="impacto" class="reveal">
+<h2>Impacto Global</h2>
+<div class="stats">
+<div class="stat">
+<h3>+1M</h3>
+<p>Envases plásticos evitados (proyección)</p>
+</div>
+<div class="stat">
+<h3>100%</h3>
+<p>Biodegradable</p>
+</div>
+<div class="stat">
+<h3>0%</h3>
+<p>Desperdicio</p>
+</div>
+</div>
 </section>
 
-<section id="negocio" class="business hidden">
-    <h2>Plan de Negocio</h2>
-    <p><strong>Problema:</strong> Falta de soluciones higiénicas prácticas y ecológicas.</p>
-    <p><strong>Solución:</strong> Láminas de jabón biodegradables.</p>
-    <p><strong>Mercado:</strong> Estudiantes, viajeros, trabajadores.</p>
-    <p><strong>Valor:</strong> Portabilidad + sostenibilidad.</p>
-    <p><strong>Canales:</strong> Redes sociales y ventas online.</p>
+<section class="reveal">
+<h2>Beneficios</h2>
+<div class="grid">
+<div class="card"><h3>🌱 Eco</h3><p>Sin impacto ambiental</p></div>
+<div class="card"><h3>👜 Portátil</h3><p>Llévalo siempre</p></div>
+<div class="card"><h3>⚡ Rápido</h3><p>Uso inmediato</p></div>
+<div class="card"><h3>✨ Premium</h3><p>Experiencia moderna</p></div>
+</div>
 </section>
 
-<section id="contacto" class="hidden">
-    <h2>Contáctanos</h2>
-    <p>Email: contacto@soapclean.com</p>
-    <p>WhatsApp: +51 999 999 999</p>
+<section id="negocio" class="reveal">
+<h2>Modelo de Negocio</h2>
+<p>Venta directa, e-commerce y distribución retail.</p>
+<p>Escalable globalmente con enfoque sostenible.</p>
+</section>
+
+<section id="contacto" class="reveal">
+<h2>Contacto</h2>
+<p>contacto@soapclean.com</p>
+<p>+51 999 999 999</p>
 </section>
 
 <footer>
-    <p>© 2026 SoapClean | Proyecto Universitario</p>
+<p>© 2026 SoapClean | Future of Clean</p>
 </footer>
 
 <a href="https://wa.me/51999999999" class="whatsapp">💬</a>
 
 <script>
-// Animaciones al hacer scroll
-const elements = document.querySelectorAll('.hidden');
-
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if(position < screen - 100){
-            el.classList.add('show');
-        }
-    });
-});
+function reveal(){
+let reveals=document.querySelectorAll('.reveal');
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+if(elementTop<windowHeight-100){
+reveals[i].classList.add('active');
+}
+}
+}
+window.addEventListener('scroll',reveal);
 </script>
 
 </body>
