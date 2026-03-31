@@ -1,163 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoapClean - Láminas de Jabón Ecológico</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4fdf7;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoapClean | Innovación Ecológica</title>
 
-        header {
-            background-color: #2ecc71;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav {
-            background-color: #27ae60;
-            padding: 10px;
-            text-align: center;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7fff9;
+    color: #333;
+    scroll-behavior: smooth;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* HEADER */
+header {
+    height: 100vh;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-        section {
-            padding: 40px;
-            text-align: center;
-        }
+    animation: fadeIn 2s ease;
+}
 
-        .hero {
-            background-color: #eafaf1;
-        }
+header h1 {
+    font-size: 3.5em;
+}
 
-        .btn {
-            background-color: #2ecc71;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
+header p {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
 
-        .benefits {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+.btn {
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: white;
+    color: #27ae60;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 10px;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+.btn:hover {
+    background: #1e8449;
+    color: white;
+}
 
-        footer {
-            background-color: #27ae60;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #27ae60;
+}
+
+/* CARDS */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 260px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* BUSINESS */
+.business {
+    background: #eafaf1;
+}
+
+/* ANIMATIONS */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* FOOTER */
+footer {
+    background: #27ae60;
+    color: white;
+    padding: 30px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+    header h1 {
+        font-size: 2.5em;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>SoapClean 🌱</h1>
-    <p>Láminas de jabón ecológico, prácticas y sostenibles</p>
+    <p>Limpieza ecológica en la palma de tu mano</p>
+    <a href="#producto" class="btn">Descubrir</a>
 </header>
 
 <nav>
     <a href="#producto">Producto</a>
     <a href="#beneficios">Beneficios</a>
-    <a href="#proceso">Proceso</a>
+    <a href="#negocio">Negocio</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
-<section class="hero">
-    <h2>Innovación en limpieza ecológica</h2>
-    <p>Lleva contigo higiene, cuidado personal y sostenibilidad en un solo producto.</p>
-    <button class="btn">Comprar ahora</button>
-</section>
-
-<section id="producto">
+<section id="producto" class="hidden">
     <h2>¿Qué es SoapClean?</h2>
     <p>
-        SoapClean son láminas de jabón biodegradables, diseñadas para facilitar la higiene personal 
-        en cualquier lugar. Son ligeras, fáciles de transportar y amigables con el medio ambiente.
+        SoapClean es una innovación en higiene personal: láminas de jabón biodegradables,
+        diseñadas para brindar limpieza práctica, portátil y sostenible en cualquier lugar.
     </p>
 </section>
 
-<section id="beneficios">
+<section id="beneficios" class="hidden">
     <h2>Beneficios</h2>
-    <div class="benefits">
+    <div class="container">
         <div class="card">
             <h3>🌱 Ecológico</h3>
-            <p>Producto biodegradable y amigable con el medio ambiente.</p>
+            <p>Reduce el impacto ambiental con materiales biodegradables.</p>
         </div>
 
         <div class="card">
             <h3>👜 Portátil</h3>
-            <p>Fácil de llevar en bolsillos, mochilas o carteras.</p>
+            <p>Llévalo a cualquier lugar sin complicaciones.</p>
         </div>
 
         <div class="card">
-            <h3>💧 Práctico</h3>
-            <p>Se disuelve rápidamente en agua, listo para usar.</p>
+            <h3>⚡ Práctico</h3>
+            <p>Se disuelve rápidamente con agua.</p>
         </div>
 
         <div class="card">
             <h3>✨ Innovador</h3>
-            <p>Formato moderno que reemplaza el jabón tradicional.</p>
+            <p>Una nueva forma de higiene personal moderna.</p>
         </div>
     </div>
 </section>
 
-<section id="proceso">
-    <h2>Proceso de Producción</h2>
-    <p>
-        SoapClean se elabora con ingredientes naturales como glicerina vegetal, extractos de plantas 
-        y fragancias suaves. Las láminas se producen mediante un proceso de laminado y secado controlado.
-    </p>
-
-    <p>
-        El empaque está hecho de materiales reciclables y biodegradables, reduciendo el impacto ambiental.
-    </p>
+<section id="negocio" class="business hidden">
+    <h2>Plan de Negocio</h2>
+    <p><strong>Problema:</strong> Falta de soluciones higiénicas prácticas y ecológicas.</p>
+    <p><strong>Solución:</strong> Láminas de jabón biodegradables.</p>
+    <p><strong>Mercado:</strong> Estudiantes, viajeros, trabajadores.</p>
+    <p><strong>Valor:</strong> Portabilidad + sostenibilidad.</p>
+    <p><strong>Canales:</strong> Redes sociales y ventas online.</p>
 </section>
 
-<section>
-    <h2>Ingredientes</h2>
-    <p>
-        Glicerina vegetal, extractos naturales (aloe vera, limón o lavanda), agua purificada, 
-        agentes espumantes suaves y fragancias naturales.
-    </p>
-</section>
-
-<section id="contacto">
+<section id="contacto" class="hidden">
     <h2>Contáctanos</h2>
-    <p>¿Interesado en nuestro producto?</p>
     <p>Email: contacto@soapclean.com</p>
     <p>WhatsApp: +51 999 999 999</p>
 </section>
 
 <footer>
-    <p>© 2026 SoapClean - Proyecto universitario ecológico</p>
+    <p>© 2026 SoapClean | Proyecto Universitario</p>
 </footer>
+
+<a href="https://wa.me/51999999999" class="whatsapp">💬</a>
+
+<script>
+// Animaciones al hacer scroll
+const elements = document.querySelectorAll('.hidden');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+
+        if(position < screen - 100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
